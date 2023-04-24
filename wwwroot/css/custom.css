@@ -1,0 +1,22 @@
+﻿body {
+    font-family: 'Noto Sans Thai', Poppins, sans-serif;
+}
+
+section.footer {
+    background-color: #f8f9fa !important;
+}
+
+.carousel-item img {
+    width: 100%;
+}
+
+.navbar-light .navbar-toggler {
+    border-color: transparent;
+}
+
+@media only screen and (max-width: 600px) {
+    .carousel-item img {
+        width: auto !important;
+        height: 450px;
+    }
+}

@@ -1,0 +1,76 @@
+﻿@*@model IEnumerable<ASPNetCoreInventory.Models.Category>*@
+
+@{
+    ViewData["Title"] = "หมวดหมู่สินค้า";
+}
+
+@*<div class="card mx-4 my-5">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-md-6">
+                <h4 class="mt-1 my-0 py-0">หมวดหมู่สินค้า</h4>
+            </div>
+            <div class="col-md-6 text-right">
+                <a asp-action="Create" asp-controller="Categories" class="btn btn-success">เพิ่มหมวดใหม่</a>
+                <button class="btn btn-primary" onclick="reloadDate()">Reload Date</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="showresult">Result</div>
+
+    <table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryStatus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryStatus)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CategoryID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CategoryID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CategoryID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+
+@section Scripts {
+    <script>
+        reloadDate();
+        function reloadDate(){
+            $.get("/Categories/GetResult", function(result){
+                $("#showresult").html(result);
+            })
+        }
+    </script>
+}*@
+
+<div id="result">Result</div>
+
+
+@section Scripts {
+    <script>
+
+        $.get("/Categories/categoryAJAX", function (result) {
+         $("#result").html(result);
+     })
+        
+    </script>
+}

@@ -1,0 +1,36 @@
+﻿<nav class="navbar navbar-expand-md navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" asp-action="Home" asp-controller="Frontend">SmartINV</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a asp-action="Home" asp-controller="Frontend" class="nav-link">หน้าหลัก</a>
+                </li>
+                <li class="nav-item">
+                    <a asp-action="About" asp-controller="Frontend" class="nav-link">เกี่ยวกับเรา</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        ผลงานของเรา
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a asp-action="Webdev" asp-controller="Frontend" class="nav-link">ออกแบบเว็บไซต์</a></li>
+                        <li><a asp-action="Mobiledev" asp-controller="Frontend" class="nav-link">พัฒนาโมบายแอพ</a></li>
+                        <li><a asp-action="Graphic" asp-controller="Frontend" class="nav-link">ออกแบบกราฟฟิก</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a asp-action="Register" asp-controller="Frontend" class="nav-link">ลงทะเบียน</a>
+                </li>
+                <li class="nav-item">
+                    <a asp-action="Login" asp-controller="Frontend" class="nav-link">เข้าสู่ระบบ</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

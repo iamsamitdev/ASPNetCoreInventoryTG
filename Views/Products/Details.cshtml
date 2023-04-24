@@ -1,0 +1,67 @@
+﻿@model ASPNetCoreInventory.Models.Product
+
+@{
+    ViewData["Title"] = @Html.DisplayFor(model => model.ProductName);
+}
+
+<div class="card mx-4 my-5">
+
+    <div class="card-header">
+        <div class="row">
+            <div class="col-md-6">
+                <h4 class="mt-1 my-0 py-0">@Html.DisplayFor(model => model.ProductName)</h4>
+            </div>
+            <div class="col-md-6 text-right">
+                <a asp-action="Products" asp-controller="Backend" class="btn btn-outline-info">กลับหน้าสินค้า</a>
+                <a asp-action="Edit" asp-route-id="@Model.ProductID" class="btn btn-warning">แก้ไข</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body my-2">
+        <dl class="row">
+            <div class="col-md-3 mb-3">
+                <img src="@Html.DisplayFor(model => model.ProductPicture)" class="img-fluid" />
+            </div>
+            <div class="col-md-9">
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProductName)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ProductName)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.UnitPrice)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.UnitPrice)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.UnitInStock)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.UnitInStock)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.CategoryID)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.CategoryID)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.CreatedDate)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.CreatedDate)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ModifiedDate)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ModifiedDate)
+                </dd>
+            </div>
+        </dl>
+    </div>
+
+</div>
